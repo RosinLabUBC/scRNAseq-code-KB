@@ -1,4 +1,4 @@
-# Following quality control, CON and COLD Seurat objects were merged into a single dataset. Vim+ cells were then subsetted from the merged object, and an initial round of clustering and testing parameters was performed specifically on the Vim+ population.
+# Following quality control, CON and COLD Seurat objects were merged into a single dataset. Vim+ cells were then subsetted from the merged object, and an initial round of clustering and testing parameters was performed specifically on the Vim+ population
 
 # clustering COLD M & F and CON M & F data sets, only Vim+ cells
 
