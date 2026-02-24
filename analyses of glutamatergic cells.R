@@ -1,4 +1,4 @@
-# on all cells (not just Vim+), looking for cells positive for glutamatergic markers 
+# on all cells (not just Vim+), looking for cells positive for glutamatergic markers
 
 library(Seurat)
 library(dplyr)
