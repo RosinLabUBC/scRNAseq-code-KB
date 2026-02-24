@@ -1,3 +1,5 @@
+# workflow to subset and cluster initial dataset to final dataset used for analysis 
+
 # On Vim+ cells only, pull out all of cluster 1 and Ascl1+ and cluster together from 35 dims, 0.1 res
 # looks pretty similar to 35 dims, 0.05 res, but 0.1 res seems to have less red interspersed in cluster 1 (more cells in cluster 1)
 
