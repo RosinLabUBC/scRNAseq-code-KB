@@ -1,4 +1,4 @@
-# Testing parameters on Vim+, cluster 1, and Ascl+ subset 
+# Testing parameters on Vim+, cluster 1, and Ascl+ subset
 
 # 30 dims -----------------------------------------------------------------
 
