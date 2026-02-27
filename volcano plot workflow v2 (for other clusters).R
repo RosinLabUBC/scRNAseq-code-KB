@@ -57,6 +57,33 @@ for (cluster in clusters) {
   # Print plot to viewer
   print(p)
   
+  # CHECK
+  comparison <- "CON_M_vs_CON_F"
+  
+  # All upregulated
+  upregulated <- DEGs %>%
+    filter(avg_log2FC > 0, p_val_adj < 0.05) %>%
+    arrange(desc(avg_log2FC))
+  
+  write.csv(upregulated,
+            paste0("/Users/kodeebao/Documents/Strategy 2 Final Analysis/Analysis on Vim+ and subsetted cells/volcano plots2/other clusters/check/all_upregulated_",
+                   cluster, "_", comparison, ".csv"),
+            row.names = FALSE)
+  
+  # All downregulated
+  downregulated <- DEGs %>%
+    filter(avg_log2FC < 0, p_val_adj < 0.05) %>%
+    arrange(avg_log2FC)
+  
+  write.csv(downregulated,
+            paste0("/Users/kodeebao/Documents/Strategy 2 Final Analysis/Analysis on Vim+ and subsetted cells/volcano plots2/other clusters/check/all_downregulated_",
+                   cluster, "_", comparison, ".csv"),
+            row.names = FALSE)
+  
+  message(cluster, " | ", comparison,
+          " | Up: ", nrow(upregulated),
+          " | Down: ", nrow(downregulated))
+  
   # Optional message
   message("Displayed volcano plot for: ", cluster)}
 
@@ -108,6 +135,33 @@ for (cluster in clusters) {
   # Print plot to viewer
   print(p)
   
+  # CHECK
+  comparison <- "CON_M_vs_COLD_M"
+  
+  # All upregulated
+  upregulated <- DEGs %>%
+    filter(avg_log2FC > 0, p_val_adj < 0.05) %>%
+    arrange(desc(avg_log2FC))
+  
+  write.csv(upregulated,
+            paste0("/Users/kodeebao/Documents/Strategy 2 Final Analysis/Analysis on Vim+ and subsetted cells/volcano plots2/other clusters/check/all_upregulated_",
+                   cluster, "_", comparison, ".csv"),
+            row.names = FALSE)
+  
+  # All downregulated
+  downregulated <- DEGs %>%
+    filter(avg_log2FC < 0, p_val_adj < 0.05) %>%
+    arrange(avg_log2FC)
+  
+  write.csv(downregulated,
+            paste0("/Users/kodeebao/Documents/Strategy 2 Final Analysis/Analysis on Vim+ and subsetted cells/volcano plots2/other clusters/check/all_downregulated_",
+                   cluster, "_", comparison, ".csv"),
+            row.names = FALSE)
+  
+  message(cluster, " | ", comparison,
+          " | Up: ", nrow(upregulated),
+          " | Down: ", nrow(downregulated))
+  
   # Optional message
   message("Displayed volcano plot for: ", cluster)}
 
@@ -158,6 +212,33 @@ for (cluster in clusters) {
   
   # Print plot to viewer
   print(p)
+  
+  # CHECK
+  comparison <- "CON_F_vs_COLD_F"
+  
+  # All upregulated
+  upregulated <- DEGs %>%
+    filter(avg_log2FC > 0, p_val_adj < 0.05) %>%
+    arrange(desc(avg_log2FC))
+  
+  write.csv(upregulated,
+            paste0("/Users/kodeebao/Documents/Strategy 2 Final Analysis/Analysis on Vim+ and subsetted cells/volcano plots2/other clusters/check/all_upregulated_",
+                   cluster, "_", comparison, ".csv"),
+            row.names = FALSE)
+  
+  # All downregulated
+  downregulated <- DEGs %>%
+    filter(avg_log2FC < 0, p_val_adj < 0.05) %>%
+    arrange(avg_log2FC)
+  
+  write.csv(downregulated,
+            paste0("/Users/kodeebao/Documents/Strategy 2 Final Analysis/Analysis on Vim+ and subsetted cells/volcano plots2/other clusters/check/all_downregulated_",
+                   cluster, "_", comparison, ".csv"),
+            row.names = FALSE)
+  
+  message(cluster, " | ", comparison,
+          " | Up: ", nrow(upregulated),
+          " | Down: ", nrow(downregulated))
   
   # Optional message
   message("Displayed volcano plot for: ", cluster)}
