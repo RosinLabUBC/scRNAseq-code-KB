@@ -417,13 +417,14 @@ summary(male_primary)
 anova_results_male_primary <- anova(male_primary)
 
 write.csv(as.data.frame(anova_results_male_primary),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_primary_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_primary_anova.csv",
           row.names = TRUE)
 
 # post hoc 
 # convert ART object to lm for emmeans
 male_primary_lm_treatment <- artlm(male_primary, "Treatment")
 male_primary_lm_size <- artlm(male_primary, "Size")
+male_primary_lm_interaction <- artlm(male_primary, "Treatment:Size")
 
 # treatment differences within each Size (Tukey adjustment)
 treatment_posthoc_male_primary <- emmeans(male_primary_lm_treatment,
@@ -431,7 +432,7 @@ treatment_posthoc_male_primary <- emmeans(male_primary_lm_treatment,
                              adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_male_primary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_primary_posthoc_treatment.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_primary_posthoc_treatment.csv",
           row.names = FALSE)
 
 # size differences within each Treatment (Tukey adjustment)
@@ -440,16 +441,16 @@ size_posthoc_male_primary <- emmeans(male_primary_lm_size,
                         adjust = "tukey")
 
 write.csv(as.data.frame(size_posthoc_male_primary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_primary_posthoc_size.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_primary_posthoc_size.csv",
           row.names = FALSE)
 
 # interaction post hoc (Tukey adjustment)
-interaction_posthoc_male_primary <- emmeans(male_primary_lm_treatment,
+interaction_posthoc_male_primary <- emmeans(male_primary_lm_interaction,
                                           pairwise ~ Treatment*Size,
                                           adjust = "tukey")
 
 write.csv(as.data.frame(interaction_posthoc_male_primary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_primary_posthoc_interaction.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_primary_posthoc_interaction.csv",
           row.names = FALSE)
 
 
@@ -464,13 +465,14 @@ summary(female_primary)
 anova_results_female_primary <- anova(female_primary)
 
 write.csv(as.data.frame(anova_results_female_primary),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_primary_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_primary_anova.csv",
           row.names = TRUE)
 
 # post hoc 
 # convert ART object to lm for emmeans
 female_primary_lm_treatment <- artlm(female_primary, "Treatment")
 female_primary_lm_size <- artlm(female_primary, "Size")
+female_primary_lm_interaction <- artlm(female_primary, "Treatment:Size")
 
 # treatment differences within each Size (Tukey adjustment)
 treatment_posthoc_female_primary <- emmeans(female_primary_lm_treatment,
@@ -478,7 +480,7 @@ treatment_posthoc_female_primary <- emmeans(female_primary_lm_treatment,
                                           adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_female_primary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_primary_posthoc_treatment.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_primary_posthoc_treatment.csv",
           row.names = FALSE)
 
 # size differences within each Treatment (Tukey adjustment)
@@ -487,16 +489,16 @@ size_posthoc_female_primary <- emmeans(female_primary_lm_size,
                                      adjust = "tukey")
 
 write.csv(as.data.frame(size_posthoc_female_primary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_primary_posthoc_size.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_primary_posthoc_size.csv",
           row.names = FALSE)
 
 # interaction post hoc (Tukey adjustment)
-interaction_posthoc_female_primary <- emmeans(female_primary_lm_treatment,
+interaction_posthoc_female_primary <- emmeans(female_primary_lm_interaction,
                                             pairwise ~ Treatment*Size,
                                             adjust = "tukey")
 
 write.csv(as.data.frame(interaction_posthoc_female_primary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_primary_posthoc_interaction.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_primary_posthoc_interaction.csv",
           row.names = FALSE)
 
 
@@ -511,13 +513,14 @@ summary(male_secondary)
 anova_results_male_secondary <- anova(male_secondary)
 
 write.csv(as.data.frame(anova_results_male_secondary),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_secondary_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_secondary_anova.csv",
           row.names = TRUE)
 
 # post hoc 
 # convert ART object to lm for emmeans
 male_secondary_lm_treatment <- artlm(male_secondary, "Treatment")
 male_secondary_lm_size <- artlm(male_secondary, "Size")
+male_secondary_lm_interaction <- artlm(male_secondary, "Treatment:Size")
 
 # treatment differences within each Size (Tukey adjustment)
 treatment_posthoc_male_secondary <- emmeans(male_secondary_lm_treatment,
@@ -525,7 +528,7 @@ treatment_posthoc_male_secondary <- emmeans(male_secondary_lm_treatment,
                                           adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_male_secondary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_secondary_posthoc_treatment.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_secondary_posthoc_treatment.csv",
           row.names = FALSE)
 
 # size differences within each Treatment (Tukey adjustment)
@@ -534,16 +537,16 @@ size_posthoc_male_secondary <- emmeans(male_secondary_lm_size,
                                      adjust = "tukey")
 
 write.csv(as.data.frame(size_posthoc_male_secondary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_secondary_posthoc_size.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_secondary_posthoc_size.csv",
           row.names = FALSE)
 
 # interaction post hoc (Tukey adjustment)
-interaction_posthoc_male_secondary <- emmeans(male_secondary_lm_treatment,
+interaction_posthoc_male_secondary <- emmeans(male_secondary_lm_interaction,
                                             pairwise ~ Treatment*Size,
                                             adjust = "tukey")
 
 write.csv(as.data.frame(interaction_posthoc_male_secondary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_secondary_posthoc_interaction.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_secondary_posthoc_interaction.csv",
           row.names = FALSE)
 
 
@@ -558,13 +561,14 @@ summary(female_secondary)
 anova_results_female_secondary <- anova(female_secondary)
 
 write.csv(as.data.frame(anova_results_female_secondary),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_secondary_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_secondary_anova.csv",
           row.names = TRUE)
 
 # post hoc 
 # convert ART object to lm for emmeans
 female_secondary_lm_treatment <- artlm(female_secondary, "Treatment")
 female_secondary_lm_size <- artlm(female_secondary, "Size")
+female_secondary_lm_interaction <- artlm(female_secondary, "Treatment:Size")
 
 # treatment differences within each Size (Tukey adjustment)
 treatment_posthoc_female_secondary <- emmeans(female_secondary_lm_treatment,
@@ -572,7 +576,7 @@ treatment_posthoc_female_secondary <- emmeans(female_secondary_lm_treatment,
                                             adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_female_secondary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_secondary_posthoc_treatment.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_secondary_posthoc_treatment.csv",
           row.names = FALSE)
 
 # size differences within each Treatment (Tukey adjustment)
@@ -581,16 +585,16 @@ size_posthoc_female_secondary <- emmeans(female_secondary_lm_size,
                                        adjust = "tukey")
 
 write.csv(as.data.frame(size_posthoc_female_secondary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_secondary_posthoc_size.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_secondary_posthoc_size.csv",
           row.names = FALSE)
 
 # interaction post hoc (Tukey adjustment)
-interaction_posthoc_female_secondary <- emmeans(female_secondary_lm_treatment,
+interaction_posthoc_female_secondary <- emmeans(female_secondary_lm_interaction,
                                               pairwise ~ Treatment*Size,
                                               adjust = "tukey")
 
 write.csv(as.data.frame(interaction_posthoc_female_secondary$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_secondary_posthoc_interaction.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_secondary_posthoc_interaction.csv",
           row.names = FALSE)
 
 
@@ -606,7 +610,7 @@ summary(male_dlx5)
 anova_results_male_dlx5 <- anova(male_dlx5)
 
 write.csv(as.data.frame(anova_results_male_dlx5),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_dlx5_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_dlx5_anova.csv",
           row.names = TRUE)
 
 # post hoc 
@@ -620,7 +624,7 @@ treatment_posthoc_male_dlx5 <- emmeans(male_dlx5_lm_treatment,
                                           adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_male_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_dlx5_posthoc_treatment(tukey).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_dlx5_posthoc_treatment(tukey).csv",
           row.names = FALSE)
 
 # puncta per cell bin differences within each Treatment (Tukey adjustment)
@@ -629,45 +633,7 @@ bin_posthoc_male_dlx5 <- emmeans(male_dlx5_lm_bin,
                                      adjust = "tukey")
 
 write.csv(as.data.frame(bin_posthoc_male_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_dlx5_posthoc_bin(tukey).csv",
-          row.names = FALSE)
-
-# interaction post hoc (Tukey adjustment)
-interaction_posthoc_male_dlx5 <- emmeans(male_dlx5_lm_treatment,
-                                                pairwise ~ Treatment*Bin,
-                                                adjust = "tukey")
-
-write.csv(as.data.frame(interaction_posthoc_male_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_dlx5_posthoc_interaction(tukey).csv",
-          row.names = FALSE)
-
-
-
-# treatment differences within each Bin (Sidak adjustment)
-treatment_posthoc_male_dlx5 <- emmeans(male_dlx5_lm_treatment,
-                                       pairwise ~ Treatment | Bin,
-                                       adjust = "sidak")
-
-write.csv(as.data.frame(treatment_posthoc_male_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_dlx5_posthoc_treatment(sidak).csv",
-          row.names = FALSE)
-
-# puncta per cell bin differences within each Treatment (Sidak adjustment)
-bin_posthoc_male_dlx5 <- emmeans(male_dlx5_lm_bin,
-                                 pairwise ~ Bin | Treatment,
-                                 adjust = "sidak")
-
-write.csv(as.data.frame(bin_posthoc_male_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_dlx5_posthoc_bin(sidak).csv",
-          row.names = FALSE)
-
-# interaction post hoc (Sidak adjustment)
-interaction_posthoc_male_dlx5 <- emmeans(male_dlx5_lm_treatment,
-                                         pairwise ~ Treatment*Bin,
-                                         adjust = "sidak")
-
-write.csv(as.data.frame(interaction_posthoc_male_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_dlx5_posthoc_interaction(sidak).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_dlx5_posthoc_bin(tukey).csv",
           row.names = FALSE)
 
 
@@ -682,7 +648,7 @@ summary(female_dlx5)
 anova_results_female_dlx5 <- anova(female_dlx5)
 
 write.csv(as.data.frame(anova_results_female_dlx5),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_dlx5_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_dlx5_anova.csv",
           row.names = TRUE)
 
 # post hoc 
@@ -696,7 +662,7 @@ treatment_posthoc_female_dlx5 <- emmeans(female_dlx5_lm_treatment,
                                        adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_female_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_dlx5_posthoc_treatment(tukey).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_dlx5_posthoc_treatment(tukey).csv",
           row.names = FALSE)
 
 # puncta per cell bin differences within each Treatment (Tukey adjustment)
@@ -705,47 +671,8 @@ bin_posthoc_female_dlx5 <- emmeans(female_dlx5_lm_bin,
                                  adjust = "tukey")
 
 write.csv(as.data.frame(bin_posthoc_female_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_dlx5_posthoc_bin(tukey).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_dlx5_posthoc_bin(tukey).csv",
           row.names = FALSE)
-
-# interaction post hoc (Tukey adjustment)
-interaction_posthoc_female_dlx5 <- emmeans(female_dlx5_lm_treatment,
-                                         pairwise ~ Treatment*Bin,
-                                         adjust = "tukey")
-
-write.csv(as.data.frame(interaction_posthoc_female_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_dlx5_posthoc_interaction(tukey).csv",
-          row.names = FALSE)
-
-
-
-# treatment differences within each Bin (Sidak adjustment)
-treatment_posthoc_female_dlx5 <- emmeans(female_dlx5_lm_treatment,
-                                       pairwise ~ Treatment | Bin,
-                                       adjust = "sidak")
-
-write.csv(as.data.frame(treatment_posthoc_female_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_dlx5_posthoc_treatment(sidak).csv",
-          row.names = FALSE)
-
-# puncta per cell bin differences within each Treatment (Sidak adjustment)
-bin_posthoc_female_dlx5 <- emmeans(female_dlx5_lm_bin,
-                                 pairwise ~ Bin | Treatment,
-                                 adjust = "sidak")
-
-write.csv(as.data.frame(bin_posthoc_female_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_dlx5_posthoc_bin(sidak).csv",
-          row.names = FALSE)
-
-# interaction post hoc (Sidak adjustment)
-interaction_posthoc_female_dlx5 <- emmeans(female_dlx5_lm_treatment,
-                                         pairwise ~ Treatment*Bin,
-                                         adjust = "sidak")
-
-write.csv(as.data.frame(interaction_posthoc_female_dlx5$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_dlx5_posthoc_interaction(sidak).csv",
-          row.names = FALSE)
-
 
 
 # ART on male epha4 ------------------------------------------------------
@@ -759,7 +686,7 @@ summary(male_epha4)
 anova_results_male_epha4 <- anova(male_epha4)
 
 write.csv(as.data.frame(anova_results_male_epha4),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_epha4_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_epha4_anova.csv",
           row.names = TRUE)
 
 # post hoc 
@@ -773,7 +700,7 @@ treatment_posthoc_male_epha4 <- emmeans(male_epha4_lm_treatment,
                                        adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_male_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_epha4_posthoc_treatment(tukey).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_epha4_posthoc_treatment(tukey).csv",
           row.names = FALSE)
 
 # puncta per cell bin differences within each Treatment (Tukey adjustment)
@@ -782,45 +709,7 @@ bin_posthoc_male_epha4 <- emmeans(male_epha4_lm_bin,
                                  adjust = "tukey")
 
 write.csv(as.data.frame(bin_posthoc_male_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_epha4_posthoc_bin(tukey).csv",
-          row.names = FALSE)
-
-# interaction post hoc (Tukey adjustment)
-interaction_posthoc_male_epha4 <- emmeans(male_epha4_lm_treatment,
-                                           pairwise ~ Treatment*Bin,
-                                           adjust = "tukey")
-
-write.csv(as.data.frame(interaction_posthoc_male_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_epha4_posthoc_interaction(tukey).csv",
-          row.names = FALSE)
-
-
-
-# treatment differences within each Bin (Sidak adjustment)
-treatment_posthoc_male_epha4 <- emmeans(male_epha4_lm_treatment,
-                                       pairwise ~ Treatment | Bin,
-                                       adjust = "sidak")
-
-write.csv(as.data.frame(treatment_posthoc_male_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_epha4_posthoc_treatment(sidak).csv",
-          row.names = FALSE)
-
-# puncta per cell bin differences within each Treatment (Sidak adjustment)
-bin_posthoc_male_epha4 <- emmeans(male_epha4_lm_bin,
-                                 pairwise ~ Bin | Treatment,
-                                 adjust = "sidak")
-
-write.csv(as.data.frame(bin_posthoc_male_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_epha4_posthoc_bin(sidak).csv",
-          row.names = FALSE)
-
-# interaction post hoc (Sidak adjustment)
-interaction_posthoc_male_epha4 <- emmeans(male_epha4_lm_treatment,
-                                           pairwise ~ Treatment*Bin,
-                                           adjust = "sidak")
-
-write.csv(as.data.frame(interaction_posthoc_male_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/male_epha4_posthoc_interaction(sidak).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/male_epha4_posthoc_bin(tukey).csv",
           row.names = FALSE)
 
 
@@ -835,7 +724,7 @@ summary(female_epha4)
 anova_results_female_epha4 <- anova(female_epha4)
 
 write.csv(as.data.frame(anova_results_female_epha4),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_epha4_anova.csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_epha4_anova.csv",
           row.names = TRUE)
 
 # post hoc 
@@ -849,7 +738,7 @@ treatment_posthoc_female_epha4 <- emmeans(female_epha4_lm_treatment,
                                          adjust = "tukey")
 
 write.csv(as.data.frame(treatment_posthoc_female_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_epha4_posthoc_treatment(tukey).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_epha4_posthoc_treatment(tukey).csv",
           row.names = FALSE)
 
 # puncta per cell bin differences within each Treatment (Tukey adjustment)
@@ -858,43 +747,7 @@ bin_posthoc_female_epha4 <- emmeans(female_epha4_lm_bin,
                                    adjust = "tukey")
 
 write.csv(as.data.frame(bin_posthoc_female_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_epha4_posthoc_bin(tukey).csv",
+          "/Users/kodeebao/Documents/ART ANOVA/results 2/female_epha4_posthoc_bin(tukey).csv",
           row.names = FALSE)
 
-# interaction post hoc (Tukey adjustment)
-interaction_posthoc_female_epha4 <- emmeans(female_epha4_lm_treatment,
-                                            pairwise ~ Treatment*Bin,
-                                            adjust = "tukey")
-
-write.csv(as.data.frame(interaction_posthoc_female_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_epha4_posthoc_interaction(tukey).csv",
-          row.names = FALSE)
-
-
-# treatment differences within each Bin (Sidak adjustment)
-treatment_posthoc_female_epha4 <- emmeans(female_epha4_lm_treatment,
-                                         pairwise ~ Treatment | Bin,
-                                         adjust = "sidak")
-
-write.csv(as.data.frame(treatment_posthoc_female_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_epha4_posthoc_treatment(sidak).csv",
-          row.names = FALSE)
-
-# puncta per cell bin differences within each Treatment (Sidak adjustment)
-bin_posthoc_female_epha4 <- emmeans(female_epha4_lm_bin,
-                                   pairwise ~ Bin | Treatment,
-                                   adjust = "sidak")
-
-write.csv(as.data.frame(bin_posthoc_female_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_epha4_posthoc_bin(sidak).csv",
-          row.names = FALSE)
-
-# interaction post hoc (Sidak adjustment)
-interaction_posthoc_female_epha4 <- emmeans(female_epha4_lm_treatment,
-                                          pairwise ~ Treatment*Bin,
-                                          adjust = "sidak")
-
-write.csv(as.data.frame(interaction_posthoc_female_epha4$contrasts),
-          "/Users/kodeebao/Documents/ART ANOVA/results/female_epha4_posthoc_interaction(sidak).csv",
-          row.names = FALSE)
 
