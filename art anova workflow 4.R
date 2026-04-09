@@ -255,6 +255,73 @@ df_female_dlx5 <- data.frame(
 saveRDS(df_female_dlx5, '/Users/kodeebao/Documents/ART ANOVA/df_female_dlx5.rds')
 
 
+# female Dlx5 data + n=4 (April 8, 2026)
+f_con_data <- c(
+  1.24481328,	9.42408377,	1.43369176, 2.23880597,
+  45.6431535,	49.7382199,	16.4874552, 24.25373134,
+  24.8962656,	21.9895288,	28.6738351, 27.6119403,
+  19.9170124,	8.90052356,	21.8637993, 23.88059701,
+  5.39419087,	4.71204188,	17.2043011, 9.328358209,
+  1.65975104,	2.61780105,	6.09318996, 6.343283582,
+  0.82987552,	1.04712042,	4.65949821, 4.104477612,
+  0,	0.52356021,	2.15053763, 0.373134328, 
+  0,	0.52356021,	0.71684588, 0.746268657,
+  0,	0,	0.71684588, 0,
+  0.41493776,	0.52356021,	0, 0.373134328,
+  0,	0,	0, 0.373134328,
+  0,	0,	0, 0.373134328,
+  0,	0,	0, 0,
+  0,	0,	0, 0,
+  0,	0,	0, 0,
+  0,	0,	0, 0,
+  0,	0,	0, 0,
+  0,	0,	0, 0,
+  0,	0,	0, 0,
+  0,	0,	0, 0)
+
+f_cold_data <- c(
+  0.55096419,	12.5,	0, 2.052785924, 
+  7.98898072,	39.5833333,	10.0271003, 25.51319648,
+  18.4573003,	18.4027778,	18.4281843, 22.87390029,
+  17.630854,	10.0694444,	19.2411924, 15.54252199,
+  15.7024793,	7.29166667,	19.5121951, 11.14369501, 
+  12.3966942,	5.90277778,	10.298103, 8.211143695, 
+  7.71349862,	1.73611111,	8.67208672, 4.985337243,
+  7.16253444,	2.43055556,	5.14905149, 2.93255132, 
+  4.4077135,	1.04166667,	3.25203252, 2.93255132, 
+  4.1322314,	0.69444444,	2.7100271, 1.759530792, 
+  0.82644628,	0.34722222,	1.08401084, 0.879765396, 
+  1.65289256,	0,	0.27100271, 1.173020528,
+  0.82644628,	0,	0, 0, 
+  0.27548209,	0,	0.54200542, 0, 
+  0,	0,	0.54200542, 0, 
+  0.27548209,	0,	0, 0, 
+  0,	0,	0, 0, 
+  0,	0,	0, 0, 
+  0,	0,	0, 0, 
+  0,	0,	0.27100271, 0, 
+  0,	0,	0, 0)
+
+# combine data frames
+all_f_scores <- c(f_con_data, f_cold_data)
+
+bin_names <- c("0", "1-5", "6-10", "11-15", "16-20", "21-25", "26-30", 
+               "31-35", "36-40", "41-45", "46-50", "51-55", "56-60", 
+               "61-65", "66-70", "71-75", "76-80", "81-85", "86-90", 
+               "91-95", "96-100")
+
+bin_labels <- rep(bin_names, each = 4, times = 2)
+
+treatment_labels <- rep(c("Control", "Cold"), each = 84)
+
+df_female_dlx5_2 <- data.frame(
+  Response = all_f_scores,
+  Treatment = factor(treatment_labels),
+  Bin = factor(bin_labels, levels = bin_names))
+
+saveRDS(df_female_dlx5_2, '/Users/kodeebao/Documents/ART ANOVA/df_female_dlx5_2.rds')
+
+
 # loading in data frames --------------------------------------------------
 
 df_male_primary_sphere <- readRDS("/Users/kodeebao/Documents/ART ANOVA/df_male_primary_sphere.rds")
@@ -266,6 +333,9 @@ df_female_secondary_sphere <- readRDS("/Users/kodeebao/Documents/ART ANOVA/df_fe
 
 df_male_dlx5 <- readRDS("/Users/kodeebao/Documents/ART ANOVA/df_male_dlx5.rds")
 df_female_dlx5 <- readRDS("/Users/kodeebao/Documents/ART ANOVA/df_female_dlx5.rds")
+
+df_female_dlx5 <- readRDS("/Users/kodeebao/Documents/ART ANOVA/df_female_dlx5_2.rds")
+
 
 # ART on male primary sphere size ------------------------------------------------------
 # fit ART model
