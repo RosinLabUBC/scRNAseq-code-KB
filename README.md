@@ -47,5 +47,5 @@ Glutamatergic cells were processed and analyzed using:
 `glutamatergic GO ORA Analysis.R`.
 
 
-Statistical analysis for neurosphere size distribution and RNAscope frequency curves was done using `art anova workflow 3.R`.
+Statistical analysis for neurosphere size distribution and RNAscope frequency curves was done using `art anova workflow 4.R`.
 
