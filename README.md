@@ -50,3 +50,5 @@ Glutamatergic cells were processed and analyzed using:
 Statistical analysis for neurosphere size distribution and RNAscope frequency curves was done using `art anova workflow 4.R`.
 
 Additional statistical analysis for Dlx2 RNAscope frequency curves was done using `art anova workflow dlx2.R`. 
+
+Additional statistical analyses using linear mixed-effects models were conducted using `mixed effects stats_aug.R`.
