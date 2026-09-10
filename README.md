@@ -52,3 +52,5 @@ Statistical analysis for neurosphere size distribution and RNAscope frequency cu
 Additional statistical analysis for Dlx2 RNAscope frequency curves was done using `art anova workflow dlx2.R`. 
 
 Additional statistical analyses using linear mixed-effects models were conducted using `mixed effects stats_aug.R`.
+
+Data verification was performed against public datasets using `blackshaw_processing datasets.R`, `blackshaw+JR_testing parameters to cluster on Vim+.R`, `blackshaw+JR_testing parameters to cluster on Vim+ and subsetted cells.R`, `blackshaw+JR_workflow merging and processing.R`, `blackshaw+JR_cell cycle workflow.R`, `blackshaw+JR_DEG analysis.R`, `blackshaw+JR_analysis of GABAergic cells.R`, `blackshaw+JR_GABAergic DEG analysis.R`, `blackshaw+JR_volcano plot workflow.R`, and `blackshaw+JR_go ora analysis workflow.R`. 
